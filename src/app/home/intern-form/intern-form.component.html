@@ -1,0 +1,30 @@
+<form [formGroup]="internForm" (ngSubmit)="onSubmit()">
+    <legend>Ajouter un stagiaire</legend>
+    <fieldset>
+        <div class="form-field">
+            <input type="text" formControlName="lastname" placeholder="Votre nom...">
+            <div class="error" *ngIf="internForm.controls['lastname'].errors && internForm.controls['lastname'].touched">
+                <span *ngIf="internForm.controls['lastname'].hasError('required')">
+                    Le nom ne peut pas être vide
+                </span>
+                <span *ngIf="internForm.controls['lastname'].hasError('minlength')">
+                    Pas assez de caractères
+                </span>
+            </div>
+        </div>
+        <div class="form-field">
+            <input type="text" formControlName="firstname" placeholder="Votre prénom...">
+            <div class="error" *ngIf="internForm.controls['firstname'].errors && internForm.controls['firstname'].touched">
+                <span *ngIf="internForm.controls['firstname'].hasError('required')">
+                    Bah alors, on sait pas écrire ? Faut rentrer quelque chose mon ami(e)
+                </span>
+
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-field">
+        <button [disabled]="internForm.invalid" type="submit">Ajouter</button>
+    </div>
+</form>
+
+{{ internForm.value | json }}
