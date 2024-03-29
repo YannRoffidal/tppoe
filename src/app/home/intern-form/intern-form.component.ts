@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InternService } from '../services/intern.service';
 import { Router } from '@angular/router';
 import { Intern } from '../types/intern.type';
+import { Poe } from '../types/poe.type';
 
 @Component({
   selector: 'app-intern-form',
@@ -11,6 +12,7 @@ import { Intern } from '../types/intern.type';
 })
 export class InternFormComponent {
   public internForm: FormGroup = new FormGroup({})
+  public poes: Poe[] = [];
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -28,6 +30,12 @@ export class InternFormComponent {
         ]
       ],
       firstname: [
+        '',
+        [
+          Validators.required
+        ]
+      ],
+      poe: [
         '',
         [
           Validators.required

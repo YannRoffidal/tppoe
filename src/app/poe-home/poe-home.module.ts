@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     PoeHomeComponent,
-    PoeFormComponent
+    PoeFormComponent,
   ],
   imports: [
     CommonModule,
