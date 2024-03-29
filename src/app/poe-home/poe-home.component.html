@@ -1,0 +1,16 @@
+<h1>Welcome to the jungle mamene</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom de la POE</th>
+            <th>Durée de la POE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let poe of poes">
+            <td>{{ poe.poeName }}</td>
+            <td>{{ poe.duration }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -17,20 +17,20 @@
 
   "poes": [
     { 
-      "name": "Poe 1",
-      "duration": "256"
+      "poeName": "Poe 1",
+      "duration": 256
     },
     { 
-      "name": "Poe 2",
-      "duration": "172"
+      "poeName": "Poe 2",
+      "duration": 172
     },
     { 
-      "name": "Poe 3",
-      "duration": "490"
+      "poeName": "Poe 3",
+      "duration": 490
     },
     { 
-      "name": "Poe 4",
-      "duration": "300"
+      "poeName": "Poe 4",
+      "duration": 300
     }
   ]
 }
