@@ -19,6 +19,7 @@ export class InternService implements IService<Intern> {
   get interns(): Array<Intern> {
     return this._interns;
   }
+  
 
   findAll(): Observable<Intern[]> {
     return this._httpClient.get<Intern[]>('http://localhost:3000/interns')

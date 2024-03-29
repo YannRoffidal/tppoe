@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InternFormComponent } from './home/intern-form/intern-form.component';
 import { PoeHomeComponent } from './poe-home/poe-home.component';
+import { PoeFormComponent } from './poe-home/poe-form/poe-form.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'poe',
     component: PoeHomeComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'add-poe',
+    component: PoeFormComponent,
     pathMatch: 'full'
   },
   {

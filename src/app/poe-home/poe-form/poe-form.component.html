@@ -1,1 +1,32 @@
-<p>poe-form works!</p>
+<form [formGroup]="poeForm" (ngSubmit)="onSubmit()">
+    <legend>Ajouter une POE</legend>
+    <fieldset>
+        <div class="form-field">
+            <input type="text" formControlName="poeName" placeholder="Nom de la promo">
+            <div class="error" *ngIf="poeForm.controls['poeName'].errors && poeForm.controls['poeName'].touched">
+                <span *ngIf="poeForm.controls['poeName'].hasError('required')">
+                    Le nom de la POE ne peut pas être vide
+                </span>
+                <span *ngIf="poeForm.controls['poeName'].hasError('minlength')">
+                    Pas assez de caractères
+                </span>
+        </div>
+        </div>
+        <div class="form-field">
+            <input type="number" formControlName="duration" placeholder="Durée de la POE (en heures)">
+            <div class="error" *ngIf="poeForm.controls['duration'].errors && poeForm.controls['duration'].touched">
+                <span *ngIf="poeForm.controls['duration'].hasError('required')">
+                    La durée de la POE ne peut pas être vide
+                </span>
+                <span *ngIf="poeForm.controls['duration'].hasError('min')">
+                    La durée de la POE doit être supérieure à 0
+                </span>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-field">
+        <button [disabled]="poeForm.invalid" type="submit">Ajouter</button>
+    </div>
+</form>
+
+{{ poeForm.value | json }}

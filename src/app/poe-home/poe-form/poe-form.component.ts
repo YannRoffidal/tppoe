@@ -20,23 +20,28 @@ export class PoeFormComponent {
 
   ngOnInit(): void {
     this.poeForm = this._formBuilder.group({
-      name: [
+      poeName: [
         '', //valeur par défaut.
         [
           Validators.required,
           Validators.minLength(3)
         ]
       ],
-      description: [
+      duration: [
         '',
         [
-          Validators.required
+          Validators.required,
+          Validators.min(1)
         ]
       ]
     })
   }
 
   onSubmit(): void {
+    this._poeService.add(this.poeForm.value)
+      .subscribe((poe: Poe) => {
+        this._router.navigate(['/poe'])
+      })
   }
 
 }
