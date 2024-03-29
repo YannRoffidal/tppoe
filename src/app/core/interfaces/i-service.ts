@@ -1,5 +1,7 @@
 // Une interface définit un CONTRAT qui va permettre d'éviter de coder dans tous les sens.
 
+import { Observable } from "rxjs"
+
 // utiliser un diamond operator (ici <T>) : ça s'appelle de la généricité (interface générique, à spécialiser par la suite)
 /**
  * 
@@ -17,4 +19,7 @@ export interface IService<T> {
      * @returns void
      */
     add(item: T): void
+
+    findAll(): Observable<Array<T>>
+
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InternService } from '../services/intern.service';
 import { Router } from '@angular/router';
+import { Intern } from '../types/intern.type';
 
 @Component({
   selector: 'app-intern-form',
@@ -37,6 +38,8 @@ export class InternFormComponent {
 
   onSubmit(): void {
     this._internService.add(this.internForm.value)
-    this._router.navigate(['/home'])
+      .subscribe((intern: Intern) => {
+        this._router.navigate(['/home'])
+      })
   }
 }
